@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int n, r, sum, temp;
+
+    for (n = 1; n <= 1000; n++) {
+        temp = n;
+        sum = 0;
+
+        while (temp != 0) {
+            r = temp % 10;
+            sum += r*r*r;
+            temp /= 10;
+        }
+
+        if (sum == n)
+            printf("%d ", n);
+    }
+
+    return 0;
+}
