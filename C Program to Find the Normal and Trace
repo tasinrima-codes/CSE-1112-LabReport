@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int r, c, i, j;
+    double sum = 0;
+    int trace = 0;
+
+    printf("Enter rows and columns: ");
+    scanf("%d %d", &r, &c);
+
+    int a[r][c];
+
+    printf("Enter matrix elements:\n");
+    for (i = 0; i < r; i++)
+        for (j = 0; j < c; j++)
+            scanf("%d", &a[i][j]);
+
+    for (i = 0; i < r; i++) {
+        for (j = 0; j < c; j++) {
+            sum += a[i][j] * a[i][j]; 
+            if (i == j)
+                trace += a[i][j];
+        }
+    }
+
+    double normal = sqrt(sum);
+
+    printf("Trace = %d\n", trace);
+    printf("Normal = %.2f\n", normal);
+
+    return 0;
+}
