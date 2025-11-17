@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main() {
+    double d;
+    char str[50];
+    printf("Enter a double: ");
+    scanf("%lf", &d);
+    sprintf(str, "%lf", d);
+    printf("Double as string: %s", str);
+    return 0;
+}
