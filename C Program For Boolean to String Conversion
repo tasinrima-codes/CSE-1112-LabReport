@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int main() {
+    int b;
+    printf("Enter 0 or 1: ");
+    scanf("%d", &b);
+    printf("Boolean as string: %s", b ? "true" : "false");
+    return 0;
+}
