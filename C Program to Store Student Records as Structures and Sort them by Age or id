@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+struct Student {
+    char name[50];
+    int age, id;
+} s[100], temp;
+
+int main() {
+    int n, choice;
+    printf("Enter number of students: ");
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++)
+        scanf("%s %d %d", s[i].name, &s[i].age, &s[i].id);
+    printf("Sort by (1) Age (2) ID: ");
+    scanf("%d", &choice);
+    for (int i = 0; i < n - 1; i++)
+        for (int j = i + 1; j < n; j++) {
+            if ((choice == 1 && s[i].age > s[j].age) ||
+                (choice == 2 && s[i].id > s[j].id)) {
+                temp = s[i];
+                s[i] = s[j];
+                s[j] = temp;
+            }
+        }
+    printf("\nSorted List:\n");
+    for (int i = 0; i < n; i++)
+        printf("%s %d %d\n", s[i].name, s[i].age, s[i].id);
+    return 0;
+}
