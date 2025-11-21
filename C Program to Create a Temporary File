@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    FILE *f = tmpfile();
+    if (f == NULL) {
+        printf("Cannot create temp file\n");
+        return 1;
+    }
+    fprintf(f, "Temporary file content\n");
+    rewind(f);
+    char str[50];
+    fgets(str, sizeof(str), f);
+    printf("%s", str);
+    fclose(f); // file is deleted automatically
+    return 0;
+}
