@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int* getNumber() {
+    static int num = 10; // static to keep value after return
+    return &num;
+}
+
+int main() {
+    int *ptr = getNumber();
+    printf("Returned value: %d", *ptr);
+    return 0;
+}
