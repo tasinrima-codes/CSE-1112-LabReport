@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+struct Complex {
+    float real, imag;
+};
+
+struct Complex add(struct Complex a, struct Complex b) {
+    struct Complex c;
+    c.real = a.real + b.real;
+    c.imag = a.imag + b.imag;
+    return c;
+}
+
+int main() {
+    struct Complex c1, c2, result;
+    printf("Enter two complex numbers: ");
+    scanf("%f %f %f %f", &c1.real, &c1.imag, &c2.real, &c2.imag);
+    result = add(c1, c2);
+    printf("Sum = %.1f + %.1fi\n", result.real, result.imag);
+    return 0;
+}
