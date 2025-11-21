@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int main() {
+    int dec;
+    printf("Enter a decimal number: ");
+    scanf("%d", &dec);
+    printf("Octal: %o", dec);
+    return 0;
+}
